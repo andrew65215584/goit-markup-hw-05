@@ -8,7 +8,7 @@ html {
 	box-sizing: inherit;
 }
 
-img{
+img {
 	display: block;
 	max-width: 100%;
 	height: auto;
@@ -31,8 +31,6 @@ body {
 	background-color: var(--background-color);
 }
 
-
-
 .list {
 	list-style: none;
 	text-decoration: none;
@@ -54,11 +52,8 @@ body {
 /* site nav */
 
 .container-site-nav {
-	border-bottom: 1px solid #ececec;
 	display: flex;
 	align-items: center;
-	padding-top: 25px;
-	padding-bottom: 25px;
 }
 
 .site-nav {
@@ -68,7 +63,7 @@ body {
 }
 
 .site-nav .link.current {
-  color: var(--accent-color);
+	color: var(--accent-color);
 }
 
 .logo {
@@ -104,6 +99,7 @@ body {
 
 .item-nav-li {
 	margin-right: 50px;
+	position: relative;
 }
 
 .item-nav-li:nth-child(3n) {
@@ -122,9 +118,21 @@ body {
 	text-decoration: none;
 	color: var(--title-text-color);
 
-	padding-top: 20px;
-	padding-bottom: 20px;
-	display: block;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	display: inline-block;
+}
+
+.link.current::after {
+	content: "";
+	position: absolute;
+	transform: translateX(-100%);
+	height: 4px;
+	width: 100%;
+
+	bottom: 0;
+	background: #2196f3;
+	border-radius: 2px;
 }
 
 .site-nav .contacts {
@@ -148,6 +156,12 @@ body {
 	display: inline-flex;
 }
 
+.contacts,
+.svg-item-telephone,
+.svg-item-envelop {
+	transition-duration: 500ms;
+}
+
 .contacts-display-li:nth-child(2) {
 	margin-right: 0px;
 }
@@ -156,7 +170,7 @@ body {
 	color: #2196f3;
 }
 .contacts-display-li:hover .svg-item-envelop,
-.contacts-display-li:hover .svg-item-telephone  {
+.contacts-display-li:hover .svg-item-telephone {
 	fill: #2196f3;
 }
 
@@ -171,21 +185,16 @@ body {
 	fill: var(--primary-text-color);
 }
 
-
-
 .svg-item-telephone {
 	width: 15px;
 	height: 15px;
 	fill: var(--primary-text-color);
 }
 
-
-
 .svg-item-benefits {
 	width: 70px;
 	height: 70px;
 }
-
 
 .contacts-display-li .contacts:hover,
 .contacts-display-li .contacts:focus {
@@ -324,7 +333,9 @@ body {
 
 .about-our-work-li {
 	width: calc((100% - 60px) / 3);
+	height: 294px;
 	margin-right: 30px;
+	position: relative;
 }
 
 .about-our-work-li:nth-child(3n) {
@@ -350,6 +361,11 @@ body {
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
 	color: #ffffff;
+
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
 }
 
 .about-our-work-li > img {
@@ -435,26 +451,24 @@ body {
 
 .social-links {
 	text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    
-	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
 }
-.social-links{
-	fill: #AFB1B8;
-}
-
-.social-links:hover{
-    background-color: var(--accent-color);
+.social-links {
+	fill: #afb1b8;
+	transition-duration: 500ms;
 }
 
-.social-links:hover .svg-item-social{
+.social-links:hover {
+	background-color: var(--accent-color);
+}
+
+.social-links:hover .svg-item-social {
 	fill: var(--background-color);
-	
 }
 
 .social-link-li {
@@ -470,20 +484,10 @@ body {
 	margin-right: 0px;
 }
 
-
 .svg-item-social {
 	width: 20px;
-    height: 20px;
-    
+	height: 20px;
 }
-
-.svg-item-social:hover{
-	background-color: var(--accent-color);
-    --color3: #ffffff
-        
-}
-
-
 
 /* our usual clients / Наши постоянные клиенты */
 
@@ -494,7 +498,7 @@ body {
 	list-style: none;
 }
 
-.our-usual-client-list li:not(:last-child){
+.our-usual-client-list li:not(:last-child) {
 	margin-right: 30px;
 }
 
@@ -506,32 +510,23 @@ body {
 	height: 90px;
 	border: 1px solid #afb1b8;
 	border-radius: 4px;
-	
-	
-
+	transition-duration: 500ms;
 }
 
-.svg-item-clients{
-	fill: #AFB1B8;
+.svg-item-clients {
+	fill: #afb1b8;
+	transition-duration: 500ms;
 }
 
 .our-usual-client-li:focus .svg-item-clients,
-.our-usual-client-li:hover .svg-item-clients{
-
-	fill:var(--accent-color);
-	
+.our-usual-client-li:hover .svg-item-clients {
+	fill: var(--accent-color);
 }
 
 .our-usual-client-li:focus .our-usual-client-link,
-.our-usual-client-li:hover .our-usual-client-link{
-
+.our-usual-client-li:hover .our-usual-client-link {
 	border: 1px solid var(--accent-color);
-	
 }
-	
-
-
-
 
 /* footer */
 
@@ -547,10 +542,6 @@ body {
 	padding-bottom: 48px;
 }
 
-/* .footer-address-div {
-	margin-top: 48px;
-	margin-bottom: 48px;
-} */
 
 .call-to-action-footer {
 	display: flex;
@@ -610,14 +601,12 @@ body {
 	margin-bottom: 21px;
 }
 
-.call-to-action-footer .call-to-action-list-flex{
+.call-to-action-footer .call-to-action-list-flex {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
 
-.call-to-action-footer 
-
-.subscript-footer .button {
+.call-to-action-footer .subscript-footer .button {
 	margin-bottom: 0px;
 }
 
@@ -632,7 +621,6 @@ body {
 
 /* button */
 .button {
-
 	background-color: var(--accent-color);
 	color: white;
 	text-decoration: none;
@@ -651,12 +639,11 @@ body {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.button.primary{
+.button.primary {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
 }
-
 
 .button-portfolio:hover,
 .button-portfolio:focus {
@@ -706,6 +693,10 @@ body {
 }
 
 /* css for portfolio */
+
+.portfolio-header {
+	border-bottom: 1px solid #ececec;
+}
 
 .title-portfolio {
 	margin-top: 0px;
@@ -761,6 +752,51 @@ body {
 .example .link {
 	display: block;
 	text-decoration: none;
+}
+
+.container-of-text-example {
+	position: relative;
+	overflow: hidden;
+}
+
+.text-on-photo {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 1.56;
+
+	letter-spacing: 0.03em;
+
+	color: #ffffff;
+	padding-top: 63px;
+	padding-bottom: 63px;
+	padding-left: 24px;
+	padding-right: 24px;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: absolute;
+	background-color: rgba(33, 150, 243, 0.9);
+	opacity: 0;
+	display: linear;
+	transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+	transform: translateY(150%);
+}
+
+.example:hover .text-on-photo {
+	opacity: 1;
+	transform: translateY(0);
+	transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.example:hover .card-content {
+	box-shadow: 
+	1px 4px 6px rgba(0, 0, 0, 0.16),
+	0px 4px 4px rgba(0, 0, 0, 0.06),
+	0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
 .example:nth-child(3n) {
